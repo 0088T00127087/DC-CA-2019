@@ -1,7 +1,7 @@
-package Server_pkg;
+package Server;
 
-import wrappers.MyStreamSocket;
-import java.io.*;
+import Wrapper.MyStreamSocket;
+
 import java.net.*;
 
 /**
@@ -22,28 +22,17 @@ public class Server {
       try {
          // instantiates a stream socket for accepting
          //   connections
-   	     ServerSocket myConnectionSocket = new ServerSocket(serverPort);
-/**/
-
-         System.out.println("Echo server ready.");
-
-
+   	   ServerSocket myConnectionSocket = 
+            new ServerSocket(serverPort); 
+/**/     System.out.println("Echo server ready.");  
          while (true) {  // forever loop
             // wait to accept a connection 
 /**/        System.out.println("Waiting for a connection.");
             MyStreamSocket myDataSocket = new MyStreamSocket(myConnectionSocket.accept( ));
 /**/        System.out.println("connection accepted");
             // Start a thread to handle this client's sesson
-            //Thread theThread = new Thread(new EchoServerThread(myDataSocket));
-            //theThread.start();
-
-
-            //Start a thread to handle this clients login
-            Thread loginThread = new Thread((new ServerLoginThread(myDataSocket)));
-            loginThread.start();
-
-
-
+            Thread theThread = new Thread(new LoginServerThread(myDataSocket));
+            theThread.start();
             // and go on to the next client
             } //end while forever
        } // end try

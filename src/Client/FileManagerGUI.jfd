@@ -1,0 +1,21 @@
+JFDML JFormDesigner: "6.0.6.4.204" Java: "1.8.0_152-release" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq l {space :p:243:p, comp exitBtn:::p::p, space ::237:x}}"
+			"$verticalGroup": "par l {seq l {space :p:170:p, comp exitBtn:::p::p, space ::178:x}}"
+		} ) {
+			name: "this"
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "exitBtn"
+				"text": "Exit"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "exitBtnActionPerformed", false ) )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 560, 410 )
+		} )
+	}
+}

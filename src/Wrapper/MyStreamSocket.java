@@ -1,5 +1,7 @@
-package wrappers;
+package Wrapper;
 
+import Classes.User;
+import java.io.Serializable;
 import java.net.*;
 import java.io.*;
 
@@ -29,45 +31,33 @@ public class MyStreamSocket extends Socket {
       InputStream inStream = socket.getInputStream();
       input = new BufferedReader(new InputStreamReader(inStream));
 
-
-     // get an output stream.
       OutputStream outStream = socket.getOutputStream();
       // create a PrinterWriter object for character-mode output
       output = new PrintWriter(new OutputStreamWriter(outStream));
    }
 
-   public void sendMessage(String message)
-   		          throws IOException {	
+
+
+   public void sendMessage(String message) throws IOException {
       output.print(message + "\n");   
-      //The ensuing flush method call is necessary for the data to
-      // be written to the socket data stream before the
-      // socket is closed.
-      output.flush();               
-   } // end sendMessage
-
-   public String receiveMessage( )
-		throws IOException {	
-      // read a line from the data stream
-      String message = input.readLine( );  
-      return message;
-   } //end receiveMessage
-
-
-   public String receiveUsername( )
-           throws IOException {
-      // read a line from the data stream
-      String username = input.readLine( );
-      return username;
-   } //end receiveMessage
-
-   public void sendLogin(String username)
-           throws IOException {
-      output.print(username + "\n");
       //The ensuing flush method call is necessary for the data to
       // be written to the socket data stream before the
       // socket is closed.
       output.flush();
    } // end sendMessage
+
+   public String receiveMessage()
+           throws IOException {
+      // read a line from the data stream
+      String message = input.readLine( );
+      return message;
+   } //end receiveMessage
+
+
+
+
+
+
 
 
    public void close( )

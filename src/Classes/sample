@@ -1,0 +1,36 @@
+try {
+
+         username = myDataSocket.receiveMessage();
+         password = myDataSocket.receiveMessage();
+
+          System.out.println("Server : Username !!!" + username);
+          System.out.println("Server : Password !!!" + password);
+
+
+
+          for (User members : allusers) {
+
+
+
+               if (username.equals(members.getUsername()) & password.equals(members.getPassword()))
+                  System.out.println("User already exists          ---- Message 400 ----");
+                  myDataSocket.sendMessage(err400);
+
+               else if ((username.equalsIgnoreCase(endMessage)))
+                  //Session over; close the data socket.
+                  /**/
+                  System.out.println("Session over.");
+              myDataSocket.close();
+              done = true;
+
+              else if()
+              // Now send the echo to the requestor
+              myDataSocket.sendMessage(con100);
+              //end else
+
+          }
+        }// end try
+        catch (IOException ex) {
+           System.out.println("Exception caught in thread: " + ex);
+        } // end catch
+   } //end run

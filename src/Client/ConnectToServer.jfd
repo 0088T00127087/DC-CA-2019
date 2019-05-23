@@ -1,0 +1,37 @@
+JFDML JFormDesigner: "6.0.6.4.204" Java: "1.8.0_152-release" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq l {par t {seq l {space :p:54:p, par l {seq {comp label2:::p::p, space ::93:x, comp portNumTxtBox:::p:113:p}, seq {comp label1:::p::p, space :::x, comp hostnameTxtBox:::p:113:p}}}, seq t {space :69:250:x, comp connectBtn:::p::p}}, space ::69:x}}"
+			"$verticalGroup": "par l {seq t {space :p:47:p, par b {comp hostnameTxtBox::b:p::p, comp label1::b:p::p}, space s:::p, par b {comp portNumTxtBox::b:p::p, comp label2::b:p::p}, space ::37:x, comp connectBtn:::p::p, space :p:76:p}}"
+		} ) {
+			name: "this"
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "connectBtn"
+				"text": "Connect"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "connectBtnActionPerformed", false ) )
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "hostnameTxtBox"
+				"text": "localhost"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "portNumTxtBox"
+				"text": "7"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": "Host Name"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label2"
+				"text": "Port Number"
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 400, 300 )
+		} )
+	}
+}

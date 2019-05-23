@@ -1,0 +1,40 @@
+JFDML JFormDesigner: "6.0.6.4.204" Java: "1.8.0_152-release" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq l {space :p:79:p, par l {seq {comp exitBtn:::p::p, space ::77:x, comp loginBtn:::p::p, space :p:86:p}, seq {par l {comp label1:::p::p, comp label2:::p::p}, space ::52:x, par l:::p {comp passWordTxtBox::::131:x, comp usernameTxtBox::::131:x}, space ::78:x}}}}"
+			"$verticalGroup": "par l {seq l {space :p:59:p, par b {comp label1::b:p::p, comp usernameTxtBox::b:p::p}, space :p:30:p, par b {comp label2::b:p::p, comp passWordTxtBox::b:p::p}, space s:::p, par t {comp loginBtn:::p::p, comp exitBtn:::p::p}, space ::71:x}}"
+		} ) {
+			name: "this"
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "usernameTxtBox"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "passWordTxtBox"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": "User Name"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label2"
+				"text": "Password"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "loginBtn"
+				"text": "Login"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "loginBtnActionPerformed", false ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "exitBtn"
+				"text": "Exit"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "testBtnActionPerformed", false ) )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 400, 300 )
+		} )
+	}
+}
